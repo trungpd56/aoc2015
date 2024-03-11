@@ -2,19 +2,20 @@
 
 import math
 import sys
-from functools import cache
 from itertools import combinations
 
-# @cache
-# def solve(i: int, t: int, qe: tuple) -> tuple[int, int]:
-#     if t == total:
-#         return len(qe), math.prod(qe)
-#     if i >= len(nums) or t > total:
-#         return sys.maxsize, sys.maxsize
-#     r1 = solve(i+1, t+nums[i], qe+ (nums[i],))
-#     r2 = solve(i+1, t, qe)
-#     return min(r1, r2)
 
+# this function will not required itertools
+# def solve(i: int, cur: tuple, maxlength: int) -> int:
+#     if len(cur) > maxlength:
+#         return sys.maxsize
+#     if sum(cur) == total:
+#         return math.prod(cur)
+#     if i >= len(nums) or sum(cur) > total:
+#         return sys.maxsize
+#     r1 = solve(i+1, cur + (nums[i],), maxlength)
+#     r2 = solve(i+1, cur, maxlength)
+#     return min(r1, r2)
 
 def solution(l: int):
     even = sum(nums) // l
